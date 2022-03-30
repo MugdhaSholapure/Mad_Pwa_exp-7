@@ -9,7 +9,20 @@
 
 	<link rel = "stylesheet" type ="text/css" href="cofeeshop.css">
 	<link rel="manifest" href="manifest.json">
-	<script defer data-domain="simranhuddedar03.github.io" src="https://plausible.io/js/plausible.js"></script>
+	<script defer data-domain="simranhuddedar03.github.io" src="https://plausible.io/js/plausible.js">
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('/service-worker.js')
+			.then(function(registration) {
+			console.log('Registration successful, scope is:', registration.scope);
+			})
+			.catch(function(error) {
+			console.log('Service worker registration failed, error:', error);
+			});
+		}
+  
+  
+
+	</script>
 
 </head>
 
