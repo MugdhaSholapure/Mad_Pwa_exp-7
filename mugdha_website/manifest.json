@@ -5,13 +5,13 @@
     "scope": "./",
     "icons": [
       {
-        "src": "coffee-logo.png",
+        "src": "contract.png",
         "sizes": "192x192",
         "type": "image/png",
         "purpose": "any maskable"
       },
       {
-        "src": "coffee-logo.png",
+        "src": "contract.png",
         "sizes": "512x512",
         "type": "image/png",
         "purpose": "any maskable"
