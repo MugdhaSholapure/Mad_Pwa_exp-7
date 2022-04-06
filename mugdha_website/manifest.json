@@ -1,12 +1,12 @@
 {
-    "name": "Stick-it Notes by Tharun",
-    "short_name": "Stick-it",
+    "name": "Mugdha_Website",
+    "short_name": "Mugzz_Website",
     
     "start_url": "/?source=pwa",
     "scope": "./",
     "icons": [
       {
-        "src": "/images/icons-192.png",
+        "src": "latte-image.png",
         "sizes": "192x192",
         "type": "image/png",
         "purpose": "any maskable"
