@@ -1,17 +1,18 @@
 {
     "name": "Stick-it Notes by Tharun",
     "short_name": "Stick-it",
-    "start_url": "index.html",
+    
+    "start_url": "/?source=pwa",
     "scope": "./",
     "icons": [
       {
-        "src": "contract.png",
+        "src": "/images/icons-192.png",
         "sizes": "192x192",
         "type": "image/png",
         "purpose": "any maskable"
       },
       {
-        "src": "contract.png",
+        "src": "latte-image.png",
         "sizes": "512x512",
         "type": "image/png",
         "purpose": "any maskable"
