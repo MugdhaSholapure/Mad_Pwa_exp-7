@@ -2,7 +2,7 @@
     "name": "Mugdha_Website",
     "short_name": "Mugzz_Website",
     
-    "start_url": "/?source=pwa",
+    "start_url": "./index.html",
     "scope": "./",
     "icons": [
       {
