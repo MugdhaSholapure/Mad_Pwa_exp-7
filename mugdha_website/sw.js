@@ -2,47 +2,23 @@ self.addEventListener("install", function (event) {
     event.waitUntil(preLoad());
 });
 
-self.addEventListener("fetch", function (event) {
-    event.respondWith(checkResponse(event.request).catch(function () {
-        console.log("Fetch from cache successful!")
-        return returnFromCache(event.request);
-    }));
-    console.log("Fetch successful!")
-    event.waitUntil(addToCache(event.request));
-});
-
-self.addEventListener('sync', event => {
-    if (event.tag === 'syncMessage') {
-        console.log("Sync successful!")
-    }
-});
-
-self.addEventListener('push', function (event) {
-    if (event && event.data) {
-        var data = event.data.json();
-        if (data.method == "pushMessage") {
-            console.log("Push notification sent");
-            event.waitUntil(self.registration.showNotification("Omkar Sweets Corner", {
-                body: data.message
-            }))
-        }
-    }
-})
-
-
 var filesToCache = [
-    '/',
-    '/menu',
-    '/contactUs',
-    '/offline.html',
+    '/index.html',
 ];
 
-var preLoad = function () {
+function preLoad() {
     return caches.open("offline").then(function (cache) {
         // caching index and important routes
         return cache.addAll(filesToCache);
     });
-};
+}
+
+self.addEventListener("fetch", function (event) {
+    event.respondWith(checkResponse(event.request).catch(function () {
+        return returnFromCache(event.request);
+    }));
+    event.waitUntil(addToCache(event.request));
+});
 
 var checkResponse = function (request) {
     return new Promise(function (fulfill, reject) {
@@ -75,4 +51,6 @@ var returnFromCache = function (request) {
         });
     });
 };
+
+
 
